@@ -4,16 +4,16 @@ import {BehaviorSubject} from 'rxjs';
 @Injectable({ providedIn: 'root' })
 export class PriceService {
   private priceSubject= new BehaviorSubject<number>(0);
-  private coinSubject= new BehaviorSubject<number>(0);
+  private coinsSubject= new BehaviorSubject<number>(0);
 
   price$ = this.priceSubject.asObservable();
-  coin$ = this.coinSubject.asObservable();
+  coins$ = this.coinsSubject.asObservable();
 
-  addPrice(price: number): void {
+  setPrice(price: number): void {
     this.priceSubject.next(price);
   }
 
-  addCoin(price: number): void {
-    this.coinSubject.next(price);
+  setCoins(price: number): void {
+    this.coinsSubject.next(price);
   }
 }
