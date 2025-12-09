@@ -1,11 +1,47 @@
 # VendingMachine
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.2.
+This project is a simulation of a vending machine implemented with Angular and a mocked API, using JSON Server.
+The application loads an initial list of products from a fake API but performs all CRUD operations only in the client state, according to the requirements.
+
+## Features
+✔ Vending Machine Logic
+* Accepts only specific coin denominations
+* Product prices are in BGN (левове)
+* Supports coin insertion
+* Validates accepted coin values
+* Supports buying a product
+* Machine returns change
+* Reset function returns inserted coins without purchase
+* Each product has a maximum inventory of 15 items
+
+✔ Products Management (CRUD)
+* Load initial products list from mocked API
+* Create, update, delete products only in application memory
+* The external API is not modified
+
+✔ Web UI
+* Responsive design
+* User-friendly interface
 
 ## Development server
 
 To start a local development server, run:
 
+install dependencies
+```bash
+npm install
+```
+
+Start the mocked API (JSON Server)
+```bash
+npm run api
+```
+
+This will start the API at:
+```bash
+http://localhost:3001/products
+```
+Start the Angular application
 ```bash
 ng serve
 ```
