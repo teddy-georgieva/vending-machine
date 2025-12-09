@@ -1,0 +1,25 @@
+.transaction-panel {
+  border-top: 1px solid #eee;
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.change {
+  font-size: 16px;
+  border-top: 1px dashed #ccc;
+  padding-top: 8px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}

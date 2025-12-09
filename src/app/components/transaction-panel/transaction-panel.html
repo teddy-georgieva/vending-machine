@@ -1,1 +1,22 @@
-<p>transaction-panel works!</p>
+<div class="transaction-panel">
+  <div class="row">
+    <span>Product Price</span>
+    <strong>
+      {{ productPrice$ | async | currency:'BGN':'symbol':'1.2-2' }}
+    </strong>
+  </div>
+
+  <div class="row">
+    <span>Inserted Amount</span>
+    <strong>
+      {{ insertedAmount$ | async | currency:'BGN':'symbol':'1.2-2' }}
+    </strong>
+  </div>
+
+  <div class="row change">
+    <span>Change</span>
+    <strong>
+      {{ changeAmount$ | async | currency:'BGN':'symbol':'1.2-2' }}
+    </strong>
+  </div>
+</div>
