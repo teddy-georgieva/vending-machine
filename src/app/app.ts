@@ -1,12 +1,12 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {Products} from './components/products/products';
+import {TransactionPanel} from './components/transaction-panel/transaction-panel';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [ Products, TransactionPanel],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('vending-machine');
 }
