@@ -1,5 +1,4 @@
 import {Component, inject} from '@angular/core';
-
 import {ProductService} from '../../services/api/product.service';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
@@ -12,6 +11,7 @@ import {MatButton} from '@angular/material/button';
 import {ConfirmationDialog} from '../confirmation-dialog/confirmation-dialog';
 import {MatDialog} from '@angular/material/dialog';
 import {CurrencyBGNDirective} from '../../directives/currency-bgn.directive';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-products',
@@ -27,7 +27,10 @@ export class Products {
   productService = inject(ProductService)
   products: Observable<Product[]> = this.productService.getProducts();
 
-  constructor(private priceService: PriceService, private fb: FormBuilder, private dialog: MatDialog
+  constructor(private priceService: PriceService,
+              private fb: FormBuilder,
+              private dialog: MatDialog,
+              private snackBar: MatSnackBar
   ) {
     this.productForm = this.fb.group({
       product: ['', Validators.required],
@@ -80,6 +83,14 @@ export class Products {
 
     dialog.afterClosed().subscribe((result: boolean) => {
       if (result) {
+        this.snackBar.open(
+          `✅ You bought ${product.name}`,
+          'OK',
+          {
+            duration: 3000,
+            verticalPosition: 'bottom'
+          }
+        );
         this.resetForm();
       }
     });
