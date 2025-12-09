@@ -16,7 +16,6 @@ The application loads an initial list of products from a fake API but performs a
 
 ✔ Products Management (CRUD)
 * Load initial products list from mocked API
-* Create, update, delete products only in application memory
 * The external API is not modified
 
 ✔ Web UI
